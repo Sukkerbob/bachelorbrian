@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="mainView" id="BYZ-38-t0r" customClass="ViewController" customModule="Sleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-qol" translatesAutoresizingMaskIntoConstraints="NO" id="YD3-WA-9h6">
+                                <rect key="frame" x="119" y="20" width="170" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="tBe-M9-SLu"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rY3-BH-30R" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="89Z-w5-BdV" customClass="PieChartView" customModule="Charts">
+                                        <rect key="frame" x="75" y="75" width="150" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="2Yw-5t-vJl"/>
+                                            <constraint firstAttribute="height" constant="150" id="gfc-QY-ai9"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQx-OD-ejz" userLabel="Info">
+                                        <rect key="frame" x="278" y="278" width="22" height="22"/>
+                                        <connections>
+                                            <action selector="showPieChartInfo:" destination="BYZ-38-t0r" eventType="touchDown" id="zwt-k8-QvO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PQx-OD-ejz" secondAttribute="bottom" id="7ly-LV-yF6"/>
+                                    <constraint firstItem="89Z-w5-BdV" firstAttribute="centerX" secondItem="rY3-BH-30R" secondAttribute="centerX" id="EHr-X4-21f"/>
+                                    <constraint firstItem="89Z-w5-BdV" firstAttribute="centerY" secondItem="rY3-BH-30R" secondAttribute="centerY" id="YH5-di-aaW"/>
+                                    <constraint firstAttribute="height" constant="300" id="cUq-1r-L0m"/>
+                                    <constraint firstAttribute="trailing" secondItem="PQx-OD-ejz" secondAttribute="trailing" id="lH2-E7-1mx"/>
+                                    <constraint firstAttribute="width" constant="300" id="o0j-wB-HPf"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTG-d4-3bt">
+                                <rect key="frame" x="0.0" y="20" width="374" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="hidePieChartInfo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UP8-51-Afv"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="frz-uD-R4k">
+                                <rect key="frame" x="207.5" y="353.5" width="0.0" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="54A-LM-J4C"/>
+                                    <constraint firstAttribute="width" id="QvX-FP-wjb"/>
+                                </constraints>
+                                <string key="text">The inner pie chart displays the recommended 24 hour day. The outer pie chart shows the data that mQoL has collected from you.   The recommendations are based on a recent article: 24 Hours of Sleep, Sedentary Behavior, and Physical Activity with Nine Wearable Devices. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVH-Ew-xwT" userLabel="EditDataCollection">
+                                <rect key="frame" x="16" y="617" width="172" height="30"/>
+                                <state key="normal" title="Pause Exploration"/>
+                                <connections>
+                                    <action selector="pauseDataCollection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0iZ-ta-9Oe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ti9-DF-KTp">
+                                <rect key="frame" x="187" y="617" width="172" height="30"/>
+                                <state key="normal" title="Delete Exploration"/>
+                                <connections>
+                                    <action selector="deleteExploration:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O2r-3p-e19"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M48-Ge-G2e">
+                                <rect key="frame" x="75" y="101" width="224" height="89"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="frz-uD-R4k" firstAttribute="centerY" secondItem="rY3-BH-30R" secondAttribute="centerY" constant="20" id="0Wx-60-kbc"/>
+                            <constraint firstItem="Ti9-DF-KTp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2Ig-l4-pnH"/>
+                            <constraint firstItem="M48-Ge-G2e" firstAttribute="top" secondItem="YD3-WA-9h6" secondAttribute="bottom" constant="8" symbolic="YES" id="7Ml-dT-WT6"/>
+                            <constraint firstItem="YD3-WA-9h6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="119" id="CFm-H9-KB4"/>
+                            <constraint firstItem="frz-uD-R4k" firstAttribute="centerX" secondItem="rY3-BH-30R" secondAttribute="centerX" constant="20" id="I3U-h7-TZ6"/>
+                            <constraint firstItem="rY3-BH-30R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ljz-Xu-e8Q"/>
+                            <constraint firstAttribute="bottom" secondItem="gVH-Ew-xwT" secondAttribute="bottom" constant="20" symbolic="YES" id="Mda-VZ-bhp"/>
+                            <constraint firstItem="rY3-BH-30R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OCb-9g-yOJ"/>
+                            <constraint firstItem="YD3-WA-9h6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QmY-Da-yPP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gVH-Ew-xwT" secondAttribute="trailing" constant="187" id="X1d-hN-DFI"/>
+                            <constraint firstItem="Ti9-DF-KTp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="187" id="edk-0U-roc"/>
+                            <constraint firstItem="mTG-d4-3bt" firstAttribute="centerY" secondItem="rY3-BH-30R" secondAttribute="centerY" constant="10" id="egV-hW-cXV"/>
+                            <constraint firstItem="mTG-d4-3bt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fUL-Xu-Ne2"/>
+                            <constraint firstItem="frz-uD-R4k" firstAttribute="top" secondItem="M48-Ge-G2e" secondAttribute="bottom" constant="163.5" id="flC-pW-uAQ"/>
+                            <constraint firstItem="M48-Ge-G2e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="fq1-oj-8P9"/>
+                            <constraint firstItem="gVH-Ew-xwT" firstAttribute="baseline" secondItem="Ti9-DF-KTp" secondAttribute="baseline" id="kXQ-65-jH6"/>
+                            <constraint firstItem="mTG-d4-3bt" firstAttribute="centerX" secondItem="M48-Ge-G2e" secondAttribute="centerX" id="lUj-Uq-dbE"/>
+                            <constraint firstItem="mTG-d4-3bt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pDp-4q-2Wu"/>
+                            <constraint firstItem="frz-uD-R4k" firstAttribute="centerX" secondItem="M48-Ge-G2e" secondAttribute="centerX" constant="20.5" id="xQ9-wa-dVO"/>
+                            <constraint firstItem="gVH-Ew-xwT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ybI-I6-t0o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundButton" destination="mTG-d4-3bt" id="Ph8-fe-hnX"/>
+                        <outlet property="info" destination="PQx-OD-ejz" id="yJY-uj-HxD"/>
+                        <outlet property="popupH" destination="54A-LM-J4C" id="gF9-SB-VyY"/>
+                        <outlet property="popupW" destination="QvX-FP-wjb" id="vtj-fl-jTV"/>
+                        <outlet property="popupcenterH" destination="0Wx-60-kbc" id="PiO-kn-Kd7"/>
+                        <outlet property="popupcenterV" destination="I3U-h7-TZ6" id="eUW-vF-vp1"/>
+                        <outlet property="recommendedChartView" destination="89Z-w5-BdV" id="vRP-Ns-v10"/>
+                        <outlet property="responseMessege" destination="M48-Ge-G2e" id="7bl-5f-jbJ"/>
+                        <outlet property="userDataChartView" destination="rY3-BH-30R" id="ahl-ET-KG4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58.399999999999999" y="158.77061469265368"/>
+        </scene>
+        <!--Consent View Controller-->
+        <scene sceneID="hue-8K-MK5">
+            <objects>
+                <viewController storyboardIdentifier="consentView" id="rmW-fL-598" customClass="ConsentViewController" customModule="Sleep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GG4-kM-QzW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-HV-qbt">
+                                <rect key="frame" x="16" y="500" width="343" height="147"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sw9-Fh-mkq">
+                                        <rect key="frame" x="294" y="20" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="ageChanged:" destination="rmW-fL-598" eventType="valueChanged" id="3ST-YF-wDc"/>
+                                        </connections>
+                                    </switch>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LEs-Xf-xWO">
+                                        <rect key="frame" x="294" y="64" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="willingToParticipateChanged:" destination="rmW-fL-598" eventType="valueChanged" id="M1W-xf-fM7"/>
+                                        </connections>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYk-lY-afr">
+                                        <rect key="frame" x="0.0" y="105" width="343" height="42"/>
+                                        <color key="backgroundColor" red="0.38082687553034394" green="0.89803921568627454" blue="0.32414656232873285" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="ACCEPT AGREEMENT">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="acceptConsent:" destination="rmW-fL-598" eventType="touchUpInside" id="cNj-Ix-mtr"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" modalTransitionStyle="crossDissolve" id="t91-7q-FRt"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="I am 18 or older" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sI5-80-SPv">
+                                        <rect key="frame" x="8" y="24" width="272" height="23"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" text="I have understood the agreement" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L5Q-97-mG3">
+                                        <rect key="frame" x="8" y="67" width="272" height="31"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Sw9-Fh-mkq" secondAttribute="trailing" id="0Ps-GV-WXa"/>
+                                    <constraint firstItem="sI5-80-SPv" firstAttribute="centerY" secondItem="Sw9-Fh-mkq" secondAttribute="centerY" id="1mV-j7-NfJ"/>
+                                    <constraint firstItem="Sw9-Fh-mkq" firstAttribute="leading" secondItem="LEs-Xf-xWO" secondAttribute="leading" id="ECN-Xd-cXY"/>
+                                    <constraint firstItem="Sw9-Fh-mkq" firstAttribute="top" secondItem="hvz-HV-qbt" secondAttribute="top" constant="20" id="NhL-FL-cGR"/>
+                                    <constraint firstItem="LEs-Xf-xWO" firstAttribute="top" secondItem="Sw9-Fh-mkq" secondAttribute="bottom" constant="13" id="PIc-HP-6od"/>
+                                    <constraint firstItem="L5Q-97-mG3" firstAttribute="top" secondItem="sI5-80-SPv" secondAttribute="bottom" constant="20" id="Q2q-Rf-siT"/>
+                                    <constraint firstItem="FYk-lY-afr" firstAttribute="top" secondItem="LEs-Xf-xWO" secondAttribute="bottom" constant="10" id="SFd-gK-bI0"/>
+                                    <constraint firstAttribute="width" constant="343" id="a6j-Eu-o5T"/>
+                                    <constraint firstItem="sI5-80-SPv" firstAttribute="leading" secondItem="L5Q-97-mG3" secondAttribute="leading" id="bKJ-ZG-m3V"/>
+                                    <constraint firstItem="FYk-lY-afr" firstAttribute="leading" secondItem="hvz-HV-qbt" secondAttribute="leading" id="hj9-r7-H5y"/>
+                                    <constraint firstItem="sI5-80-SPv" firstAttribute="top" secondItem="hvz-HV-qbt" secondAttribute="top" constant="24" id="jKt-pm-S4P"/>
+                                    <constraint firstItem="sI5-80-SPv" firstAttribute="trailing" secondItem="L5Q-97-mG3" secondAttribute="trailing" id="k1x-O4-NmS"/>
+                                    <constraint firstItem="LEs-Xf-xWO" firstAttribute="trailing" secondItem="FYk-lY-afr" secondAttribute="trailing" id="khI-OG-quN"/>
+                                    <constraint firstAttribute="height" constant="147" id="r9V-yk-zLj"/>
+                                    <constraint firstItem="sI5-80-SPv" firstAttribute="leading" secondItem="hvz-HV-qbt" secondAttribute="leadingMargin" id="rL4-tu-bjS"/>
+                                    <constraint firstItem="FYk-lY-afr" firstAttribute="top" secondItem="L5Q-97-mG3" secondAttribute="bottom" constant="7" id="wT9-lN-ovh"/>
+                                    <constraint firstItem="Sw9-Fh-mkq" firstAttribute="leading" secondItem="sI5-80-SPv" secondAttribute="trailing" constant="14" id="zTr-Ey-gBe"/>
+                                    <constraint firstAttribute="bottom" secondItem="FYk-lY-afr" secondAttribute="bottom" id="zUX-ln-gl1"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uya-3Y-PEF">
+                                <rect key="frame" x="16" y="20" width="343" height="482"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-qol" translatesAutoresizingMaskIntoConstraints="NO" id="UX6-gC-Hng">
+                                        <rect key="frame" x="83" y="0.0" width="177" height="110"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="177" id="5wd-Qf-KdH"/>
+                                            <constraint firstAttribute="height" constant="110" id="C5E-1S-gTp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="68y-2J-ufQ">
+                                        <rect key="frame" x="0.0" y="103" width="343" height="379"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <mutableString key="text">1. Welcome 
+Duration: As long as you feel like till the end of the H2020 WellCo project (31 December 2021) 
+Involves: Just an initial consent within the app. 
+
+You are invited to participate in a research study on your lifestyle patterns and how data collected on wearables and smartphones can be leveraged to assess these patterns. By studying this, we hope to develop algorithms for lifestyle assessment and provide design implications for mobile solutions designated to help combat unhealthy lifestyle patterns and develop healthier ones.
+
+The study implies that we collect datasets from a smartphone you own.
+
+2. Data Collection
+For study participant we collect sleep-related data from Apple Health in the participants’ smartphone following a strict protocol that guarantees data privacy and confidentiality for all participants. Such data are not privacy violating since it is anonymized and safely transmitted to the servers at the Quality of Life Technologies Lab of University of Geneva (Switzerland) and University of Copenhagen (Denmark).
+
+In the last step of this process, you will need to grant the necessary permissions to our application in order to collect data from the sensors. Collected data will include data from before consent is given. Please read carefully the following details regarding the data collection. 
+
+DATA INCLUDED:
+1. Biological sex
+2. Birth year
+3. Start and end time of asleep period
+4. Start and end time of in bed period
+5. Universally unique identifier for mQoL-Sleep
+
+Universally Unique Identifier (UUID) is used to associate the collected data. The UUID is mQoL-Sleep specific, and one is created for each participant. The UUID can not be used to identify or track down your iPhone, thus mQoL-Sleep still guarantees anonymity.
+
+3. Data protection
+The data are automatically sent and saved by the app on our secure servers within the lab. Your identity is unknown to us, we only store a unique identifier, which you keep along the studies and cannot track back to you. 
+The data collected are only sent when your phone is charging and connected to a WiFi network.
+
+You have the right to refuse to answer particular questions. Your individual privacy will be maintained in all published and written data resulting from the study. The results of this research study may be presented at scientific or professional meetings or published in scientific journals. Data collected during this experiment will stop being processed on December 31, 2021 and will be deleted on December 31, 2026 at the latest.
+
+4. What to expect
+Along the study our application will collect the data and we will not contact you via your phone or otherwise. 
+
+1. Participants and peers are required to be 18 years old or above. 
+2. Participants and peers shall have a smartphone application running Apple OS
+3. Participants and peers shall have a sufficient comprehension of written English to sign this consent. 
+
+5. Participant’s Rights
+Your participation is voluntary, and you have the right to withdraw consent or discontinue participation at any time without penalty or loss of benefits to which you are otherwise entitled. If you decide to drop the study, just delete the app from your phone. You can tell the researchers if you wish to delete your data via the "delete data" button in the applications main screen. If we don't hear from you we assume that you approve that your data remains as part of this study (following the same data protection rules of the study). 
+
+You have the right to refuse to provide us access to some data streams. Your individual privacy will be maintained in all published and written data resulting from the study. The results of this research study may be presented at scientific or professional meetings or published in scientific journals.
+
+CONTACT INFORMATION:  If you have any questions, concerns or complaints about this research, its procedures, risks and benefits, contact the Protocol Director, Katarzyna Wac &lt;Katarzyna.Wac@unige.ch&gt; or &lt;wac@di.ku.dk&gt;
+
+
+INDEPENDENT CONTACT: The research has been approved by ethics committee of University of Geneva and Copenhagen. If you are not satisfied with how this study is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a participant, please contact Data Protection Officer is Ms. Lisa Ibenfeldt Schultz &lt;dpo@adm.ku.dk&gt; , to
+speak to someone independent from the research team.
+
+VOLUNTARY CONSENT: By signing below, you agree that the above information has been explained to you and all your current questions have been answered.  You understand that you may ask questions about any aspect of this research study during the course of the study and in the future.  
+
+
+6. Risks &amp; Benefits
+The risks and discomfort associated with your participation in this study are no greater than those ordinarily encountered in daily life or while carrying a smartphone. The benefits, which may reasonably be expected to result from this study, are understanding of your own habits (for participants). We cannot and do not guarantee or promise that you will receive any benefits from this study.
+
+In this study you will not receive any payment for your participation. 
+
+</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="68y-2J-ufQ" firstAttribute="centerX" secondItem="uya-3Y-PEF" secondAttribute="centerX" id="0wG-A0-Shp"/>
+                                    <constraint firstItem="UX6-gC-Hng" firstAttribute="top" secondItem="uya-3Y-PEF" secondAttribute="top" id="7Aq-6e-EVY"/>
+                                    <constraint firstItem="68y-2J-ufQ" firstAttribute="leading" secondItem="uya-3Y-PEF" secondAttribute="leading" id="7uW-qE-aMd"/>
+                                    <constraint firstItem="68y-2J-ufQ" firstAttribute="centerX" secondItem="UX6-gC-Hng" secondAttribute="centerX" id="9Wd-pQ-XcC"/>
+                                    <constraint firstAttribute="trailing" secondItem="68y-2J-ufQ" secondAttribute="trailing" id="Fj7-g0-G1g"/>
+                                    <constraint firstItem="UX6-gC-Hng" firstAttribute="leading" secondItem="uya-3Y-PEF" secondAttribute="leading" constant="83" id="Tmd-oX-EEN"/>
+                                    <constraint firstItem="68y-2J-ufQ" firstAttribute="top" secondItem="uya-3Y-PEF" secondAttribute="top" constant="103" id="pwg-LO-6l8"/>
+                                    <constraint firstAttribute="bottom" secondItem="68y-2J-ufQ" secondAttribute="bottom" id="wqG-9W-evc"/>
+                                    <constraint firstItem="68y-2J-ufQ" firstAttribute="centerY" secondItem="uya-3Y-PEF" secondAttribute="centerY" constant="51.5" id="y8A-6L-1by"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hvz-HV-qbt" firstAttribute="leading" secondItem="GG4-kM-QzW" secondAttribute="leadingMargin" id="CdW-uh-HYR"/>
+                            <constraint firstItem="uya-3Y-PEF" firstAttribute="leading" secondItem="hvz-HV-qbt" secondAttribute="leading" id="U1V-CO-Z8O"/>
+                            <constraint firstAttribute="bottom" secondItem="hvz-HV-qbt" secondAttribute="bottom" constant="20" symbolic="YES" id="ULh-Ja-pjx"/>
+                            <constraint firstItem="uya-3Y-PEF" firstAttribute="trailing" secondItem="hvz-HV-qbt" secondAttribute="trailing" id="VXe-Pa-sho"/>
+                            <constraint firstItem="hvz-HV-qbt" firstAttribute="top" secondItem="uya-3Y-PEF" secondAttribute="bottom" constant="-2" id="fqm-PD-Oxh"/>
+                            <constraint firstItem="uya-3Y-PEF" firstAttribute="top" secondItem="dVw-yI-XXT" secondAttribute="top" id="z5o-rZ-LAL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dVw-yI-XXT"/>
+                    </view>
+                    <connections>
+                        <outlet property="age" destination="Sw9-Fh-mkq" id="QOW-8F-g5h"/>
+                        <outlet property="consent" destination="FYk-lY-afr" id="Ep1-iv-AiY"/>
+                        <outlet property="willingToParticipate" destination="LEs-Xf-xWO" id="G2t-qV-wu0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CYi-Pa-z4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58" y="-620"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo-qol" width="170" height="76"/>
+    </resources>
+</document>
