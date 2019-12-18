@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = rootViewController
         
         let configuration = ParseClientConfiguration {
-            $0.applicationId = "mQoL-app-dk"
-            $0.clientKey = "6MR5Y5xNUVO6B4"
-            $0.server = "https://qol1.unige.ch/mqol-parse-dk"
+            $0.applicationId = "tmp"
+            $0.clientKey = "tmp"
+            $0.server = "tmp"
         }
 
         if (Parse.currentConfiguration() == nil) {
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ///
     /// - returns: True if flags indicate automatic WiFi connection, otherwise false
     func deviceIsConnectedToWiFi() -> Bool {
-        guard let reachability = SCNetworkReachabilityCreateWithName(nil, "https://qol1.unige.ch/mqol-parse-dk") else {
+        guard let reachability = SCNetworkReachabilityCreateWithName(nil, "tmp") else {
             return false
         }
         
